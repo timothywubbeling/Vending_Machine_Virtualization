@@ -1,0 +1,85 @@
+2026-05-04 14:51:59,451 [INFO] Starting ngrok tunnel...
+2026-05-04 14:51:59,452 [INFO] Opening tunnel named: http-5000-41d54d73-e7b3-4fe7-a90c-b19ab8666859
+2026-05-04 14:51:59,452 [DEBUG] Installing ngrok 3 to C:\Users\Admin\AppData\Local\ngrok\ngrok.exe ...
+2026-05-04 14:51:59,453 [DEBUG] Platform to download: windows_x86_64
+2026-05-04 14:51:59,453 [DEBUG] Download ngrok from https://bin.ngrok.com/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip ...
+2026-05-04 14:52:05,331 [DEBUG] Extracting ngrok binary from C:\Users\Admin\AppData\Local\Temp\ngrok-v3-stable-windows-amd64.zip to C:\Users\Admin\AppData\Local\ngrok\ngrok.exe ...
+2026-05-04 14:52:05,502 [DEBUG] Installing default ngrok config to C:\Users\Admin\AppData\Local\ngrok\ngrok.yml ...
+2026-05-04 14:52:06,823 [DEBUG] ngrok process starting with PID: 64356
+2026-05-04 14:52:06,861 [INFO] t=2026-05-04T14:52:06+0200 lvl=info msg="no configuration paths supplied"
+2026-05-04 14:52:06,861 [INFO] t=2026-05-04T14:52:06+0200 lvl=info msg="ignoring default config path" path=C:\\Users\\Admin\\AppData\\Local\\ngrok\\ngrok.yml err="GetFileAttributesEx C:\\Users\\Admin\\AppData\\Local\\ngrok\\ngrok.yml: The system cannot find the path specified."
+2026-05-04 14:52:06,862 [INFO] t=2026-05-04T14:52:06+0200 lvl=info msg="FIPS 140 mode" enabled=false
+2026-05-04 14:52:06,863 [ERROR] t=2026-05-04T14:52:06+0200 lvl=eror msg="unable to evaluate ngrok agent binary path for symlinks" obj=tunnels.session err="GetFileAttributesEx C:\\Users\\Admin\\AppData\\Local\\ngrok: The system cannot find the file specified."
+2026-05-04 14:52:06,898 [INFO] t=2026-05-04T14:52:06+0200 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2026-05-04 14:52:07,604 [ERROR] t=2026-05-04T14:52:07+0200 lvl=eror msg="failed to reconnect session" obj=tunnels.session err="authentication failed: Usage of ngrok requires a verified account and authtoken.\n\nSign up for an account: https://dashboard.ngrok.com/signup\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\r\n\r\nERR_NGROK_4018\r\n"
+2026-05-04 14:52:07,604 [ERROR] t=2026-05-04T14:52:07+0200 lvl=eror msg="session closing" obj=tunnels.session err="authentication failed: Usage of ngrok requires a verified account and authtoken.\n\nSign up for an account: https://dashboard.ngrok.com/signup\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\r\n\r\nERR_NGROK_4018\r\n"
+2026-05-04 14:52:07,605 [INFO] t=2026-05-04T14:52:07+0200 lvl=info msg="received stop request" obj=app stopReq="{err:{Remote:true Inner:{Inner:0x536fcb16300}} restart:false}"
+2026-05-04 14:52:07,605 [ERROR] t=2026-05-04T14:52:07+0200 lvl=eror msg="terminating with error" obj=app err="authentication failed: Usage of ngrok requires a verified account and authtoken.\n\nSign up for an account: https://dashboard.ngrok.com/signup\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\r\n\r\nERR_NGROK_4018\r\n"
+2026-05-04 14:52:07,606 [CRITICAL] t=2026-05-04T14:52:07+0200 lvl=crit msg="command failed" err="authentication failed: Usage of ngrok requires a verified account and authtoken.\n\nSign up for an account: https://dashboard.ngrok.com/signup\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\r\n\r\nERR_NGROK_4018\r\n"
+2026-05-04 14:52:07,606 [INFO] t=2026-05-04T14:52:07+0200 lvl=info msg="no more state changes" obj=tunnels.session
+2026-05-04 14:52:07,606 [WARNING] t=2026-05-04T14:52:07+0200 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.ngrok-agent.com/check\": context canceled"
+2026-05-04 14:52:07,616 [DEBUG] Removing stale process for "ngrok_path" C:\Users\Admin\AppData\Local\ngrok\ngrok.exe
+2026-05-04 14:52:07,617 [DEBUG] "ngrok_path" C:\Users\Admin\AppData\Local\ngrok\ngrok.exe is not running a process
+2026-05-04 14:52:07,617 [ERROR] Fatal error: The ngrok process errored on start: authentication failed: Usage of ngrok requires a verified account and authtoken.\n\nSign up for an account: https://dashboard.ngrok.com/signup\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\r\n\r\nERR_NGROK_4018\r\n.
+Traceback (most recent call last):
+  File "C:\Tim\Personal\Vending Machine\PI_Hosted\app.py", line 274, in <module>
+    tunnel_url = start_ngrok()
+                 ^^^^^^^^^^^^^
+  File "C:\Tim\Personal\Vending Machine\PI_Hosted\app.py", line 261, in start_ngrok
+    public_url = ngrok.connect(PORT, "http").public_url
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Tim\Personal\Vending Machine\PI_Hosted\venv\Lib\site-packages\pyngrok\ngrok.py", line 389, in connect
+    api_url = get_ngrok_process(pyngrok_config).api_url
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Tim\Personal\Vending Machine\PI_Hosted\venv\Lib\site-packages\pyngrok\ngrok.py", line 217, in get_ngrok_process
+    return process.get_process(pyngrok_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Tim\Personal\Vending Machine\PI_Hosted\venv\Lib\site-packages\pyngrok\process.py", line 273, in get_process
+    return _start_process(pyngrok_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Tim\Personal\Vending Machine\PI_Hosted\venv\Lib\site-packages\pyngrok\process.py", line 449, in _start_process
+    raise PyngrokNgrokError(f"The ngrok process errored on start: {ngrok_process.startup_error}.",
+pyngrok.exception.PyngrokNgrokError: The ngrok process errored on start: authentication failed: Usage of ngrok requires a verified account and authtoken.\n\nSign up for an account: https://dashboard.ngrok.com/signup\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\r\n\r\nERR_NGROK_4018\r\n.
+2026-05-04 14:58:25,050 [INFO] Starting ngrok tunnel...
+2026-05-04 14:58:25,051 [INFO] Opening tunnel named: http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b
+2026-05-04 14:58:25,060 [DEBUG] ngrok process starting with PID: 6504
+2026-05-04 14:58:25,081 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="no configuration paths supplied"
+2026-05-04 14:58:25,082 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="using configuration at default config path" path=C:\\Users\\Admin\\AppData\\Local\\ngrok\\ngrok.yml
+2026-05-04 14:58:25,082 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="open config file" path=C:\\Users\\Admin\\AppData\\Local\\ngrok\\ngrok.yml err=nil
+2026-05-04 14:58:25,082 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="FIPS 140 mode" enabled=false
+2026-05-04 14:58:25,084 [ERROR] t=2026-05-04T14:58:25+0200 lvl=eror msg="unable to evaluate ngrok agent binary path for symlinks" obj=tunnels.session err="GetFileAttributesEx C:\\Users\\Admin\\AppData\\Local\\ngrok\\ngrok.exe: The system cannot find the file specified."
+2026-05-04 14:58:25,108 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2026-05-04 14:58:25,816 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="client session established" obj=tunnels.session
+2026-05-04 14:58:25,817 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg="tunnel session started" obj=tunnels.session
+2026-05-04 14:58:25,825 [DEBUG] ngrok process has started with API URL: http://127.0.0.1:4040
+2026-05-04 14:58:25,825 [DEBUG] Monitor thread will be started
+2026-05-04 14:58:25,826 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=start pg=/api/tunnels id=a9828d887deaff45
+2026-05-04 14:58:25,826 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=end pg=/api/tunnels id=a9828d887deaff45 status=200 dur=0s
+2026-05-04 14:58:25,827 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=start pg=/api/tunnels id=5702f32fabf6be08
+2026-05-04 14:58:25,827 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=end pg=/api/tunnels id=5702f32fabf6be08 status=200 dur=0s
+2026-05-04 14:58:25,828 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=start pg=/api/tunnels id=0ed2e5cc151bc4ae
+2026-05-04 14:58:25,828 [DEBUG] Creating tunnel with options: {'name': 'http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b', 'addr': '5000', 'proto': 'http'}
+2026-05-04 14:58:25,828 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=end pg=/api/tunnels id=0ed2e5cc151bc4ae status=200 dur=0s
+2026-05-04 14:58:25,828 [DEBUG] Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b', 'addr': '5000', 'proto': 'http'}
+2026-05-04 14:58:25,829 [INFO] t=2026-05-04T14:58:25+0200 lvl=info msg=start pg=/api/tunnels id=d40f6092bc7d86c5
+2026-05-04 14:58:26,005 [INFO] t=2026-05-04T14:58:26+0200 lvl=info msg="update available" obj=updater
+2026-05-04 14:58:26,407 [INFO] t=2026-05-04T14:58:26+0200 lvl=info msg="started tunnel" obj=tunnels name=http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b addr=http://localhost:5000 url=https://unlethal-impartial-desire.ngrok-free.dev
+2026-05-04 14:58:26,408 [DEBUG] Response 201: {"name":"http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b","ID":"7db22f7f74f1e7276cb3185ccc689097","uri":"/api/tunnels/http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b","public_url":"https://unlethal-impartial-desire.ngrok-free.dev","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2026-05-04 14:58:26,409 [INFO] t=2026-05-04T14:58:26+0200 lvl=info msg=end pg=/api/tunnels id=d40f6092bc7d86c5 status=201 dur=577.0607ms
+2026-05-04 14:58:26,419 [INFO] Starting Flask server...
+2026-05-04 14:58:26,505 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.162:5000
+2026-05-04 14:58:26,505 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-04 14:58:42,777 [INFO] 127.0.0.1 - - [04/May/2026 14:58:42] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-04 14:58:42,843 [INFO] 127.0.0.1 - - [04/May/2026 14:58:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-04 15:04:01,121 [INFO] 127.0.0.1 - - [04/May/2026 15:04:01] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-04 15:04:01,274 [INFO] 127.0.0.1 - - [04/May/2026 15:04:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-04 15:05:35,188 [INFO] 127.0.0.1 - - [04/May/2026 15:05:35] "GET /test HTTP/1.1" 200 -
+2026-05-04 15:06:59,837 [INFO] t=2026-05-04T15:06:59+0200 lvl=info msg="received stop request" obj=app stopReq="{err:<nil> restart:false}"
+2026-05-04 15:06:59,838 [INFO] t=2026-05-04T15:06:59+0200 lvl=info msg="session closing" obj=tunnels.session err=nil
+2026-05-04 15:06:59,838 [INFO] t=2026-05-04T15:06:59+0200 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=59816cf75a84 err="reconnecting session closed"
+2026-05-04 15:06:59,838 [INFO] t=2026-05-04T15:06:59+0200 lvl=info msg="no more state changes" obj=tunnels.session
+2026-05-04 15:06:59,838 [INFO] t=2026-05-04T15:06:59+0200 lvl=info msg="failed to accept connection: Listener closed" obj=tunnels.session clientid=7db22f7f74f1e7276cb3185ccc689097
+2026-05-04 15:06:59,838 [WARNING] t=2026-05-04T15:06:59+0200 lvl=warn msg="Stopping forwarder" name=http-5000-2b5d39fc-b1ec-4354-91d3-95a08bfca92b acceptErr="failed to accept connection: Listener closed"
